@@ -1,0 +1,142 @@
+<mxfile host="Electron" modified="2024-01-15T11:51:06.846Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="Hc7-utSbcFxwdO4MIddd" version="21.6.5" type="device">
+  <diagram name="Strona-1" id="VG7acqM8fFUqb3uUOzvJ">
+    <mxGraphModel dx="2259" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-1" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="170" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-2" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="190" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-3" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="170" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="384" y="250" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-6" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="850" y="170" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-7" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="940" y="190" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-9" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=1;startArrow=none;startFill=0;endFill=1;fillColor=#1ba1e2;strokeColor=#006EAF;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="919.48" y="280" as="sourcePoint" />
+            <mxPoint x="969.48" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-11" value="" style="endArrow=none;html=1;rounded=0;fillColor=#1ba1e2;strokeColor=#006EAF;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" target="ZWXhxT9hvHQiR628Yv7b-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="250" as="sourcePoint" />
+            <mxPoint x="450" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-12" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.reload;" vertex="1" parent="1">
+          <mxGeometry x="414" y="250" width="24" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-14" value="Vibration on correct hold position" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-15" value="Default phone hold" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-16" value="Up of phone facing downward and screen facing the body" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-17" value="Synchronized timer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-19" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="170" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-20" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="724" y="250" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-21" value="After timer passes vibration to shoot" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-22" value="Measure time on moving phone to correct possision" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="815" y="340" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-23" value="Send time&lt;br&gt;Compare" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-25" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="170" width="80" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-26" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.phone2;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="190" width="30" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-27" value="Default phone hold" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-28" value="End duel" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-29" value="Lunch app" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-240" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-30" value="Start/Join game" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-31" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-110" y="230" as="sourcePoint" />
+            <mxPoint x="-60" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-34" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="230" as="sourcePoint" />
+            <mxPoint x="130" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-35" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="260" y="230" as="sourcePoint" />
+            <mxPoint x="310" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-37" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="229.5" as="sourcePoint" />
+            <mxPoint x="470" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-38" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="229.5" as="sourcePoint" />
+            <mxPoint x="660" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-39" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="229.5" as="sourcePoint" />
+            <mxPoint x="820" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-40" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990" y="229.5" as="sourcePoint" />
+            <mxPoint x="1040" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-41" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1180" y="229.5" as="sourcePoint" />
+            <mxPoint x="1230" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZWXhxT9hvHQiR628Yv7b-42" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1350" y="229.5" as="sourcePoint" />
+            <mxPoint x="1400" y="229.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
