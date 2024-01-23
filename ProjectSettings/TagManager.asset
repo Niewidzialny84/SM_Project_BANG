@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back
+    uniqueID: 3946251801
+    locked: 0
+  - name: Front
+    uniqueID: 2876796577
+    locked: 0
