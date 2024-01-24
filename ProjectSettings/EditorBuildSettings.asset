@@ -9,7 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Starting Screen.unity
     guid: a93b7ca96654752408331474001cb99e
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+    path: Assets/Scenes/Loading Screen.unity
+    guid: 1dd8568ae24af0746a288446dcca20d1
+  - enabled: 1
+    path: Assets/Scenes/Menu Screen.unity
+    guid: 16e0aac8fd41d5b439c8931369bb6963
+  - enabled: 1
+    path: Assets/Scenes/Duel Screen.unity
+    guid: a668474f7be4caa4a85f96dffef287e9
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: e8e6512a7c716814b92265c4ba1cd167, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: aefee68a9c79a454387614fa102f575b, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: c9f4b307c094e834b84cff5279da3e4f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4dfc6b821cb5b324c8b147414a89206d, type: 2}
