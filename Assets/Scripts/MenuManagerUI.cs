@@ -31,7 +31,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Missing room code";
+                errorText.GetComponent<TMP_Text>().text = "Missing duel name";
             }
         }
     }
@@ -48,7 +48,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Missing room code";
+                errorText.GetComponent<TMP_Text>().text = "Missing duel name";
             }
         }    
     }
@@ -67,7 +67,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Room already full";
+                errorText.GetComponent<TMP_Text>().text = "Duel already full";
             }
         }
         else if (message == "Game does not exist")
@@ -75,7 +75,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Room does not exist";
+                errorText.GetComponent<TMP_Text>().text = "Duel does not exist";
             }
         }
     }
@@ -88,7 +88,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Room already exists";
+                errorText.GetComponent<TMP_Text>().text = "Duel already exists";
             }
         }
     }
