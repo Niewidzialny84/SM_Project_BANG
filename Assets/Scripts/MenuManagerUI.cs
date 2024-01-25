@@ -23,7 +23,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             {
                 errorText.GetComponent<TMP_Text>().text = "";
             }
-            PhotonNetwork.CreateRoom(roomCodeTextbox.GetComponent<TMP_InputField>().text, new RoomOptions() { MaxPlayers = 2, IsVisible = true, IsOpen = true }, TypedLobby.Default, null);
+            PhotonNetwork.CreateRoom(roomCodeTextbox.GetComponent<TMP_InputField>().text, new RoomOptions() { MaxPlayers = 2 }, TypedLobby.Default, null);
         }
         else
         {
