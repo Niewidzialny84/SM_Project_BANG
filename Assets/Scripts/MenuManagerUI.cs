@@ -58,10 +58,32 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(sceneName);
     }
 
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        base.OnJoinRoomFailed(returnCode, message);
+        //Debug.Log(message);
+        if (message == "Game full")
+        {
+            errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
+            if (errorText is not null)
+            {
+                errorText.GetComponent<TMP_Text>().text = "Room already full";
+            }
+        }
+        else if (message == "Game does not exist")
+        {
+            errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
+            if (errorText is not null)
+            {
+                errorText.GetComponent<TMP_Text>().text = "Room does not exist";
+            }
+        }
+    }
+
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         base.OnCreateRoomFailed(returnCode, message);
-        if(message == "A game with the specified id already exist.")
+        if (message == "A game with the specified id already exist.")
         {
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
