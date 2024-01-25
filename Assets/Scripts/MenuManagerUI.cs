@@ -57,4 +57,17 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel(sceneName);
     }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        base.OnCreateRoomFailed(returnCode, message);
+        if(message == "A game with the specified id already exist.")
+        {
+            errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
+            if (errorText is not null)
+            {
+                errorText.GetComponent<TMP_Text>().text = "Room already exists";
+            }
+        }
+    }
 }
