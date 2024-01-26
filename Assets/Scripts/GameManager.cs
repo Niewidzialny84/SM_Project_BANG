@@ -1,6 +1,5 @@
 using Photon.Pun;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,8 @@ public class GameManager : MonoBehaviour
     private GameObject displayMove;
     public GameObject timer;
     public float time;
+    public GameObject readyButton;
+    private bool isAllPlayersReady;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PhotonNetwork.PlayerList.Count() == 1)
+        CheckIfAllPlayersReady();
+
+        if (PhotonNetwork.PlayerList.Count() == 2 && isAllPlayersReady)
         {
+            readyButton.SetActive(false);
+
             if (time > 0)
             {
                 time -= Time.deltaTime;
@@ -33,10 +38,15 @@ public class GameManager : MonoBehaviour
 
             DisplayTime(time);
         }
+
+        if (time == 0)
+            timer.SetActive(false);
     }
 
     private void Awake()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+        isAllPlayersReady = false;
         SpawnPlayers();
     }
 
@@ -61,5 +71,32 @@ public class GameManager : MonoBehaviour
 
         var seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timer.GetComponent<Text>().text = seconds.ToString();
+    }
+
+    [PunRPC]
+    public void GetReady()
+    {
+        var playersList = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in playersList)
+        {
+            if (player.GetComponent<PlayerScript>().playerName == PhotonNetwork.LocalPlayer.NickName)
+            {
+                player.GetComponent<PlayerScript>().GetReady();
+            }
+        }
+    }
+
+    private void CheckIfAllPlayersReady()
+    {
+        isAllPlayersReady = true;
+
+        var playersList = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in playersList)
+        {
+            if (!player.GetComponent<PlayerScript>().isReady)
+            {
+                isAllPlayersReady = false;
+            }
+        }
     }
 }

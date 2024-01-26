@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4050599277541967024}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObservedComponentsFoldoutOpen: 1
   Group: 0
-  prefixField: -1
+  prefixField: 0
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
@@ -68,9 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179b6e4b98f6420418900192e3cdcb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
   photonView: {fileID: 6926721759223607158}
   playerNameText: {fileID: 7768801473529558398}
-  readyButton: {fileID: 0}
   isReady: 0
   ShakeDetectionThreshold: 3.6
 --- !u!1 &2042380678382924996

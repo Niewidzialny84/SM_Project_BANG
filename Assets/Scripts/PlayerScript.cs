@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public string playerName;
     public PhotonView photonView;
     public GameObject playerNameText;
-    public GameObject readyButton;
     private bool wasFired;
-    [SerializeField] private bool isReady;
+    public bool isReady;
 
     public float ShakeDetectionThreshold;
     private float sqrShakeDetectionThreshold;
@@ -22,10 +22,12 @@ public class PlayerScript : MonoBehaviour
 
         if (photonView.IsMine)
         {
+            playerName = PhotonNetwork.LocalPlayer.NickName;
             playerNameText.GetComponent<TMP_Text>().text = PhotonNetwork.LocalPlayer.NickName;
         }
         else
         {
+            playerName = photonView.Owner.NickName;
             playerNameText.GetComponent<TMP_Text>().text = photonView.Owner.NickName;
         }
     }
@@ -45,7 +47,10 @@ public class PlayerScript : MonoBehaviour
     {
         if (photonView.IsMine)
         {
-            isReady = true;
+            photonView.RPC("SetReady", RpcTarget.All);
         }
     }
+
+    [PunRPC]
+    public void SetReady() => isReady = true;
 }

@@ -451,8 +451,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4050599277541967024, guid: 0c0c8689c1ffc374f8f4fb66819587b9, type: 3}
-        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+      - m_Target: {fileID: 1290929180}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GetReady
         m_Mode: 1
         m_Arguments:
@@ -548,6 +548,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 764341551809741349, guid: 0c0c8689c1ffc374f8f4fb66819587b9, type: 3}
   timer: {fileID: 1916970954}
   time: 5
+  readyButton: {fileID: 937140087}
 --- !u!1 &1760733312
 GameObject:
   m_ObjectHideFlags: 0
