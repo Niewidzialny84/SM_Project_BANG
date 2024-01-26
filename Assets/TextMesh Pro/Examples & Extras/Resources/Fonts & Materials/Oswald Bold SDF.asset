@@ -783,6 +783,94 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 365
     m_Height: 1023
+  - m_X: 277
+    m_Y: 78
+    m_Width: 26
+    m_Height: 2
+  - m_X: 334
+    m_Y: 99
+    m_Width: 689
+    m_Height: 924
+  - m_X: 334
+    m_Y: 80
+    m_Width: 27
+    m_Height: 943
+  - m_X: 188
+    m_Y: 101
+    m_Width: 13
+    m_Height: 55
+  - m_X: 250
+    m_Y: 171
+    m_Width: 773
+    m_Height: 852
+  - m_X: 250
+    m_Y: 156
+    m_Width: 27
+    m_Height: 867
+  - m_X: 105
+    m_Y: 109
+    m_Width: 30
+    m_Height: 91
+  - m_X: 169
+    m_Y: 200
+    m_Width: 19
+    m_Height: 823
+  - m_X: 169
+    m_Y: 256
+    m_Width: 854
+    m_Height: 767
+  - m_X: 55
+    m_Y: 288
+    m_Width: 1
+    m_Height: 80
+  - m_X: 56
+    m_Y: 113
+    m_Width: 1
+    m_Height: 93
+  - m_X: 0
+    m_Y: 769
+    m_Width: 1023
+    m_Height: 254
+  - m_X: 43
+    m_Y: 648
+    m_Width: 980
+    m_Height: 22
+  - m_X: 62
+    m_Y: 648
+    m_Width: 961
+    m_Height: 375
+  - m_X: 56
+    m_Y: 403
+    m_Width: 9
+    m_Height: 66
+  - m_X: 116
+    m_Y: 502
+    m_Width: 907
+    m_Height: 521
+  - m_X: 65
+    m_Y: 502
+    m_Width: 958
+    m_Height: 69
+  - m_X: 101
+    m_Y: 206
+    m_Width: 4
+    m_Height: 101
+  - m_X: 101
+    m_Y: 299
+    m_Width: 922
+    m_Height: 8
+  - m_X: 124
+    m_Y: 384
+    m_Width: 899
+    m_Height: 639
+  - m_X: 149
+    m_Y: 299
+    m_Width: 874
+    m_Height: 724
+  - m_X: 91
+    m_Y: 384
+    m_Width: 932
+    m_Height: 19
   m_fontInfo:
     Name: Oswald
     PointSize: 71
