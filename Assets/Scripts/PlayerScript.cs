@@ -6,7 +6,9 @@ public class PlayerScript : MonoBehaviour
 {
     public PhotonView photonView;
     public GameObject playerNameText;
+    public GameObject readyButton;
     private bool wasFired;
+    [SerializeField] private bool isReady;
 
     public float ShakeDetectionThreshold;
     private float sqrShakeDetectionThreshold;
@@ -15,6 +17,7 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         wasFired = false;
+        isReady = false;
         sqrShakeDetectionThreshold = Mathf.Pow(ShakeDetectionThreshold, 2);
 
         if (photonView.IsMine)
@@ -27,11 +30,22 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
+    {
+        CheckIfShake();
+    }
+
+    private void CheckIfShake()
     {
         if (Input.acceleration.sqrMagnitude > sqrShakeDetectionThreshold && photonView.IsMine)
-        {
             wasFired = true;
+    }
+
+    public void GetReady()
+    {
+        if (photonView.IsMine)
+        {
+            isReady = true;
         }
     }
 }
