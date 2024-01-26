@@ -1,10 +1,12 @@
 using Photon.Pun;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
+    private GameObject displayMove;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +28,12 @@ public class GameManager : MonoBehaviour
     private void SpawnPlayers()
     {
         if (PhotonNetwork.PlayerList.Count() == 1)
-            PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(-4, -2), Quaternion.identity, 0);
+        {
+            displayMove = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, -300, 0), Quaternion.identity, 0);
+        }
         else
-            PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(-4, 2), Quaternion.identity, 0);
+        {
+            displayMove = PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 300, 0), Quaternion.identity, 0);
+        }
     }
 }
