@@ -45,6 +45,7 @@ public class ScreenManager : MonoBehaviour
                 }
                 
                 break;
+
             default:
                 // code block
                 break;
