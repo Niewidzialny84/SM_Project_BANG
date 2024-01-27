@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 1290929180}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,8 +547,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 764341551809741349, guid: 0c0c8689c1ffc374f8f4fb66819587b9, type: 3}
   timer: {fileID: 1916970954}
+  result: {fileID: 1659696135}
   time: 5
+  timeDuel: 0
+  timeToFinish: 0
   readyButton: {fileID: 937140087}
+--- !u!1 &1659696135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659696136}
+  - component: {fileID: 1659696138}
+  - component: {fileID: 1659696137}
+  m_Layer: 0
+  m_Name: Result
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1659696136
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659696135}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.00014, y: 1.00014, z: 1.00014}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7152257249346307686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0027161, y: 40.6}
+  m_SizeDelta: {x: 1169.8, y: 372.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1659696137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659696135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9f6d0e7bc8541498c9a4799ba184ede, type: 3}
+    m_FontSize: 200
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 200
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1659696138
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659696135}
+  m_CullTransparentMesh: 1
 --- !u!1 &1760733312
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +954,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3037432517677582087, guid: 49495aa197fa6b64eb5e3e5a0087584d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1916970955}
+    - targetCorrespondingSourceObject: {fileID: 3037432517677582087, guid: 49495aa197fa6b64eb5e3e5a0087584d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1659696136}
     - targetCorrespondingSourceObject: {fileID: 3037432517677582087, guid: 49495aa197fa6b64eb5e3e5a0087584d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 937140088}

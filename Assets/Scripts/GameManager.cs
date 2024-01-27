@@ -1,16 +1,23 @@
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
+using Photon.Realtime;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
     private GameObject displayMove;
     public GameObject timer;
-    public float time;
+    public GameObject result;
+    public float time, timeDuel, timeToFinish;
     public GameObject readyButton;
     private bool isAllPlayersReady;
+    private System.DateTime hourZero;
+    private GameObject thisPlayer, otherPlayer;
+    private bool gotTimeStamp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +28,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckIfAllPlayersReady();
+        if(!isAllPlayersReady) CheckIfAllPlayersReady();
 
         if (PhotonNetwork.PlayerList.Count() == 2 && isAllPlayersReady)
         {
@@ -31,9 +38,92 @@ public class GameManager : MonoBehaviour
             {
                 time -= Time.deltaTime;
             }
-            else
+            else if (time <= 0)
             {
+                if(!gotTimeStamp)
+                {
+                    hourZero = System.DateTime.UtcNow;
+                    Handheld.Vibrate();
+                    gotTimeStamp = true;
+                }
                 time = 0;
+
+                if (timeDuel > 0)
+                {
+                    timeDuel -= Time.deltaTime;
+                }
+                else if (timeDuel <= 0)
+                {
+                    timeDuel = 0;
+
+                    if(result.GetComponent<Text>().text == "")
+                    {
+                        var playersList = GameObject.FindGameObjectsWithTag("Player");
+                        foreach (var player in playersList)
+                        {
+                            //Randomly we assign players only here, could be done earlier but needs some rebuilding. FOR NOW LEAVE AS IS
+                            if (player.GetComponent<PlayerScript>().playerName == PhotonNetwork.LocalPlayer.NickName)
+                            {
+                                thisPlayer = player;
+                            }
+                            else
+                            {
+                                otherPlayer = player;
+                            }
+                        }
+
+                        if (thisPlayer != null && !thisPlayer.GetComponent<PlayerScript>().wasFired)
+                        {
+                            result.GetComponent<Text>().text = "Not fired!";
+                            result.GetComponent<Text>().color = Color.red;
+                        }
+                        else if (thisPlayer != null && hourZero.CompareTo(thisPlayer.GetComponent<PlayerScript>().fireTime) >= 0)
+                        {
+                            result.GetComponent<Text>().text = "Missfire!";
+                            result.GetComponent<Text>().color = Color.red;
+                        }
+                        else if (thisPlayer != null && otherPlayer != null && !otherPlayer.GetComponent<PlayerScript>().wasFired)
+                        {
+                            result.GetComponent<Text>().text = "You win!";
+                            result.GetComponent<Text>().color = Color.green;
+                        }
+                        else if (thisPlayer != null && otherPlayer != null && otherPlayer.GetComponent<PlayerScript>().wasFired && hourZero.CompareTo(otherPlayer.GetComponent<PlayerScript>().fireTime) >= 0)
+                        {
+                            result.GetComponent<Text>().text = "You win!";
+                            result.GetComponent<Text>().color = Color.green;
+                        }
+                        else if (thisPlayer != null && otherPlayer != null && otherPlayer.GetComponent<PlayerScript>().wasFired)
+                        {
+                            if (thisPlayer.GetComponent<PlayerScript>().fireTime.CompareTo(otherPlayer.GetComponent<PlayerScript>().fireTime) >= 0)
+                            {
+                                result.GetComponent<Text>().text = "You died!";
+                                result.GetComponent<Text>().color = Color.red;
+                            }
+                            else
+                            {
+                                result.GetComponent<Text>().text = "You win!";
+                                result.GetComponent<Text>().color = Color.green;
+                            }
+                        }
+
+
+                    }
+
+                    if (timeToFinish > 0)
+                    {
+                        timeToFinish -= Time.deltaTime;
+                    }
+                    else if (timeToFinish <= 0 && PhotonNetwork.IsMasterClient)
+                    {
+                        var toKick = PhotonNetwork.PlayerListOthers;
+                        foreach (var item in toKick) { PhotonNetwork.CloseConnection(item);  }
+                        PhotonNetwork.Disconnect();
+                    }
+                    else
+                    {
+                        PhotonNetwork.Disconnect();
+                    }
+                }
             }
 
             DisplayTime(time);
@@ -43,10 +133,19 @@ public class GameManager : MonoBehaviour
             timer.SetActive(false);
     }
 
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        PhotonNetwork.Disconnect();
+    }
+
     private void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
         isAllPlayersReady = false;
+        gotTimeStamp = false;
+        timeDuel = 3;
+        timeToFinish = 10;
         SpawnPlayers();
     }
 
