@@ -71,6 +71,8 @@ MonoBehaviour:
   playerName: 
   photonView: {fileID: 6926721759223607158}
   playerNameText: {fileID: 7768801473529558398}
+  controller: {fileID: 0}
+  wasFired: 0
   isReady: 0
   ShakeDetectionThreshold: 3.6
 --- !u!1 &2042380678382924996

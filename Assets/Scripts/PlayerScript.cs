@@ -1,5 +1,7 @@
 using Photon.Pun;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -7,7 +9,9 @@ public class PlayerScript : MonoBehaviour
     public string playerName;
     public PhotonView photonView;
     public GameObject playerNameText;
-    private bool wasFired;
+    public GameObject controller;
+    public bool wasFired;
+    public System.DateTime fireTime;
     public bool isReady;
 
     public float ShakeDetectionThreshold;
@@ -30,22 +34,28 @@ public class PlayerScript : MonoBehaviour
             playerName = photonView.Owner.NickName;
             playerNameText.GetComponent<TMP_Text>().text = photonView.Owner.NickName;
         }
+        controller = FindObjectOfType<GameManager>().gameObject;
     }
 
     private void Update()
     {
-        CheckIfShake();
+        if (/*Input.GetKey("space") &&*/ controller.GetComponent<GameManager>().time <= 3f && controller.GetComponent<GameManager>().timeDuel > 0f && !wasFired && photonView.IsMine)
+        {
+            //photonView.RPC("ShootingAction", RpcTarget.All);
+            CheckIfShake();
+        }
+
     }
 
     private void CheckIfShake()
     {
         if (Input.acceleration.sqrMagnitude > sqrShakeDetectionThreshold && photonView.IsMine)
-            wasFired = true;
+            photonView.RPC("ShootingAction", RpcTarget.All);
     }
 
     public void GetReady()
     {
-        if (photonView.IsMine)
+        if (photonView.IsMine && PhotonNetwork.PlayerList.Count() == 2)
         {
             photonView.RPC("SetReady", RpcTarget.All);
         }
@@ -53,4 +63,17 @@ public class PlayerScript : MonoBehaviour
 
     [PunRPC]
     public void SetReady() => isReady = true;
+
+    [PunRPC]
+    public void ShootingAction()
+    {
+        wasFired = true;
+        fireTime = System.DateTime.UtcNow;
+    }
+
+    private void OnDestroy()
+    {
+        if(photonView.IsMine)
+        PhotonNetwork.Destroy(this.gameObject);
+    }
 }
