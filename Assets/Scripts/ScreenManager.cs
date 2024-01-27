@@ -1,3 +1,4 @@
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,6 +30,7 @@ public class ScreenManager : MonoBehaviour
                         errorText.GetComponent<TMP_Text>().text = "";
                     }
                     username = inputText.GetComponent<TMP_InputField>().text;
+                    PhotonNetwork.NickName = username;
                     SceneManager.LoadScene(sceneName);
                     break;
                 }
@@ -43,6 +45,7 @@ public class ScreenManager : MonoBehaviour
                 }
                 
                 break;
+
             default:
                 // code block
                 break;

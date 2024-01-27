@@ -23,7 +23,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             {
                 errorText.GetComponent<TMP_Text>().text = "";
             }
-            PhotonNetwork.CreateRoom(roomCodeTextbox.GetComponent<TMP_InputField>().text, new RoomOptions() { MaxPlayers = 2, IsVisible = true, IsOpen = true }, TypedLobby.Default, null);
+            PhotonNetwork.CreateRoom(roomCodeTextbox.GetComponent<TMP_InputField>().text, new RoomOptions() { MaxPlayers = 2 }, TypedLobby.Default, null);
         }
         else
         {
@@ -31,7 +31,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Missing room code";
+                errorText.GetComponent<TMP_Text>().text = "Missing duel name";
             }
         }
     }
@@ -48,7 +48,7 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Missing room code";
+                errorText.GetComponent<TMP_Text>().text = "Missing duel name";
             }
         }    
     }
@@ -58,15 +58,37 @@ public class MenuManagerUI : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel(sceneName);
     }
 
-    public override void OnCreateRoomFailed(short returnCode, string message)
+    public override void OnJoinRoomFailed(short returnCode, string message)
     {
-        base.OnCreateRoomFailed(returnCode, message);
-        if(message == "A game with the specified id already exist.")
+        base.OnJoinRoomFailed(returnCode, message);
+        //Debug.Log(message);
+        if (message == "Game full")
         {
             errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
             if (errorText is not null)
             {
-                errorText.GetComponent<TMP_Text>().text = "Room already exists";
+                errorText.GetComponent<TMP_Text>().text = "Duel already full";
+            }
+        }
+        else if (message == "Game does not exist")
+        {
+            errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
+            if (errorText is not null)
+            {
+                errorText.GetComponent<TMP_Text>().text = "Duel does not exist";
+            }
+        }
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        base.OnCreateRoomFailed(returnCode, message);
+        if (message == "A game with the specified id already exist.")
+        {
+            errorText = GameObject.FindGameObjectWithTag("ErrorMSG");
+            if (errorText is not null)
+            {
+                errorText.GetComponent<TMP_Text>().text = "Duel already exists";
             }
         }
     }
