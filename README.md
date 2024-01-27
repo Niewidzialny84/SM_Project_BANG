@@ -11,9 +11,9 @@ Example 2 player flow could be described in this steps:
 2. Player 1 creates lobby and gives invite to Player 2.
 3. Player 2 joins the lobby.
 4. Both Players confirm their readines.
-5. Game starts both Players should place phone in their holster (facing downward with screen towards player), correct placement is confirmed by vibration.
-6. When both Players have their phones in correct position internal timer starts the game.
-7. After randomized time period Players are notified by another vibration to shoot.
+5. Game starts both Players should place press the ready button.
+6. When both Players are ready internal timer starts the game.
+7. After 5s time period Players are notified by another vibration to shoot.
 8. Each Player shoots (Rise arm with phone upward as fast as possible).
 9. Times for rising the phone are compared and faster Player wins.
 10. Game ends, Players return to title screen.
